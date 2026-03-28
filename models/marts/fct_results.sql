@@ -7,6 +7,20 @@
 SELECT
     r.ibu_id AS athlete_id,
     r.race_id,
-    r.event_id
-    -- TODO: add the remaining result columns
+    r.event_id,
+    r.bib,
+    r.start_order,
+    r.result_order,
+    r.rank,
+    r.irm,
+    r.shootings,
+    r.shooting_total,
+    r.run_time,
+    r.total_time,
+    r.behind,
+    r.wc,
+    r.nc,
+    r.noc,
+    r.is_team,
+    r.leg
 FROM {{ ref('stg_race_results') }} r

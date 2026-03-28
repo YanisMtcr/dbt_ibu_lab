@@ -5,6 +5,10 @@
    - Reference the staging model with {{ ref('stg_race_results') }} #}
 
 SELECT DISTINCT
-    ibu_id AS athlete_id
-    -- TODO: add the remaining athlete columns
+    ibu_id AS athlete_id,
+    name,
+    family_name,
+    given_name,
+    athlete_nat,
+    is_team
 FROM {{ ref('stg_race_results') }}

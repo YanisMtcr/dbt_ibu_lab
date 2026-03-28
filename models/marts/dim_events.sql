@@ -4,6 +4,9 @@
    - Reference the staging model with {{ ref('stg_race_results') }} #}
 
 SELECT DISTINCT
-    event_id
-    -- TODO: add the remaining event columns
+    event_id,
+    event_description,
+    short_description,
+    nat,
+    level
 FROM {{ ref('stg_race_results') }}
