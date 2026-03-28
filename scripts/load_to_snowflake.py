@@ -1,6 +1,7 @@
 import os
 import snowflake.connector
 
+
 account  = os.environ["SNOWFLAKE_ACCOUNT"]
 user     = os.environ["SNOWFLAKE_USER"]
 password = os.environ["SNOWFLAKE_PASSWORD"]
@@ -10,6 +11,7 @@ database = os.environ["SNOWFLAKE_DATABASE"]
 schema   = os.environ["SNOWFLAKE_SCHEMA"]
 csv_path = os.path.abspath("seeds/races_results_raw.csv")
 
+
 conn = snowflake.connector.connect(
     account=account,
     user=user,
@@ -17,7 +19,10 @@ conn = snowflake.connector.connect(
     role=role,
     warehouse=warehouse,
 )
+
+
 cur = conn.cursor()
+
 
 steps = [
     f"CREATE DATABASE IF NOT EXISTS {database}",
